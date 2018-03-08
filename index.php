@@ -5,52 +5,50 @@
 	<title>php calculator</title>
 	<link rel="stylesheet" href="bootstrap.min.css">
 </head>
-<body class="bg-info">
-	<div class="card col-md-6 mx-auto mt-5">
-	<form method="GET" class="form-group mt-4">
-		<input type="text" name="num1" placeholder="Number" class="form-control">
-		<input type="text" name="num2" placeholder="Number" class="form-control">
-		<select name="oparator" class="mt3" >
-			<option>None</option>
-			<option>Add</option>
-			<option>subtract</option>
-			<option>multiply</option>
-			<option>Divide</option>
-		</select>
-		<br>
-			<button type="submit" name="submit" value="submit" class="btn btn-info float-right">Calculate</button>
-	</form>
-	
-	<p>The ans is:</p>
-
-	<?php 
-	if (isset($_GET['submit'])) {
-		$result1 = $_GET['num1'];
-		$result2 = $_GET['num2'];
-		$oparator = $_GET['oparator'];
-		switch ($oparator) {
-			case "None":
-
-				echo "You need to select a method";
-				break;
-
+<body class="bg-success">
+	<div class="card col-md-6 mt-5 mx-auto">
+		<h4>Php calculator</h4>
+		<form class="form-group">
+			<input type="text" name="number1" placeholder="Number" class="form-control">
+			<input type="text" name="number2" placeholder="Number" class="form-control">
+			<select name="oparetor" >
+				<option>None</option>
+				<option>Add</option>
+				<option>Subcrite</option>
+				<option>Multiply</option>
+				<option>Dievide</option>
+			</select>
+			<br>	
+			<button type="submit" value="submit" name="submit" class="btn btn-primary float-right">Calculate</button>
+		</form>
+		<p>The Ans is:</p>
+		<?php 
+			if (isset($_GET['submit'])) {
+				$ruselt1 =$_GET['number1'];
+				$ruselt2 =$_GET['number2'];
+				$oparetor =$_GET['oparetor'];
+				switch ($oparetor) {
+					case "None":
+						echo "Select any method";
+						break;
 				case "Add":
-				echo $result1 + $result2;
-				break;
-				case "subtract":
-				echo $result1 - $result2;
-				break;
+						echo $ruselt1 + $ruselt2;
+						break;
 
-				case "multiply":
-				echo $result1 * $result2;
-				break;
-				case "Divide":
-				echo $result1 / $result2;
-				break;
-			
-		}
-	}
-	 ?>
+				case "Subcrite":
+						echo $ruselt1 - $ruselt2;
+						break;
+				case "Multiply":
+						echo $ruselt1 * $ruselt2;
+						break;
+
+			  	case "Dievide":
+						echo $ruselt1 / $ruselt2;
+						break;
+				
+				}
+			}
+		 ?>
 	</div>
-	</body>
+</body>
 </html>
